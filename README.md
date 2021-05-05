@@ -5,3 +5,5 @@ In the command line:
 ```shell
 pip install pygad
 ```
+
+Make use of the `pygad` package.
