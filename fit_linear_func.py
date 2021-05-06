@@ -6,7 +6,7 @@ function_inputs = [2.5, 1.4, -5.3, -10.8, 7.5]
 
 desired_output = 26.7
 
-print_flag = False
+print_flag = True
 def fitness_func(solution, solution_idx):
     output = np.sum(solution * function_inputs)
     fitness = 1.0 / np.abs(output - desired_output)
@@ -20,7 +20,7 @@ sol_per_pop = 40
 num_genes = len(function_inputs)
 init_range_low = -2
 init_range_high = 5
-mutation_percent_genes = 1
+mutation_percent_genes = 20
 
 ga_instance = pygad.GA(
     num_generations=200,
@@ -31,6 +31,7 @@ ga_instance = pygad.GA(
     init_range_low=init_range_low,
     init_range_high=init_range_high,
     mutation_percent_genes=mutation_percent_genes,
+    crossover_probability=0.2,
 )
 
 ga_instance.run()
